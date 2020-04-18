@@ -1,4 +1,4 @@
-![封面](./images/daily-cover.jpeg)
+![封面](../images/daily-cover.jpeg)
 
 # 每日一题系列
 整理平时学习过程中遇到的一些小工具或技巧.
