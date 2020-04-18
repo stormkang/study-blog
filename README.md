@@ -3,3 +3,5 @@
 
 ## 入门
 - [前端概论](introduction/前端概论.md)
+
+<img src="./dist/images/WX20200417-211608.png">
