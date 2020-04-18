@@ -1,8 +1,10 @@
+![封面](./images/cover.jpg)
+
 #  前端学习笔记
 记录前端学习内容及学习总结.
 
 ## 入门
-- [前端概论](./01-introduction/前端概论.md)
+- [前端概论](./introduction/前端概论.md)
 
 
 
