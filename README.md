@@ -1,4 +1,4 @@
-![封面](./images/cover.jpg)
+![封面](./images/main-cover.jpg)
 
 #  前端学习笔记
 记录前端学习内容及学习总结.
