@@ -4,7 +4,7 @@
 记录前端学习内容及总结.
 
 ## 入门
-- [前端概论](./introduction/前端概论.md)
+- [前端概论](./introduction/index.md)
 
 ## HTML
 - [HTML体系](./html/index.md)
