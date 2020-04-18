@@ -1,5 +1,4 @@
-# HTML
-
+# HTML体系
 
 ## html
 html元素代表HTML文档的根元素。建议在根html元素上指定lang属性，以提供文档的语言。这有助于语音合成工具确定使用什么发音，翻译工具确定使用什么规则，等等。
@@ -51,7 +50,7 @@ title元素表示文档的标题或名称。应该使用能够识别文档的标
 </body>
 ```
 上面示例中的链接是指向“https://www.example.com/news/archives.html”的链接。
-> 如果有多个带有href属性的基本元素，则忽略除第一个之外的所有基本元素。
+> 注意： 如果有多个带有href属性的基本元素，则忽略除第一个之外的所有基本元素。
 
 ## link
 link元素允许作者将文档链接到其他资源。
@@ -105,4 +104,6 @@ style元素允许作者在文档中嵌入CSS样式表。
   em { font-style: normal; color: red; }
 </style>
 ```
-![HTML体系结构](../images/html.png)
+
+## HTML体系结构
+![HTML体系结构](../images/html-full.png)
