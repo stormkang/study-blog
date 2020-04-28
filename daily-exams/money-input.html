@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数字金额转大写</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .fr {
+      float: right;
+    }
+
+    .container {
+      width: 365px;
+    }
+
+    #input {
+      width: 100%;
+      line-height: 20px;
+    }
+
+    .text {
+      font-size: 12px;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <input type="number" id="input" maxlength="5"><br>
+    <div class="text fr"></div>
+  </div>
+
+  <script>
+
+    /**
+     * 表单框输入数字显示对应的大写金额文字.
+     * 整数部分限额999999999999元, 小数部分只显示到3位(毫).
+     */
+
+    // 定义常量 
+    const MONEY_MAX_LIMIT = 999999999999;
+    const MONEY_FRAC_TEXT = ['分', '厘', '毫'];
+    const MONEY_INT_TEXT = ['元整', '拾', '佰', '仟', '万', '拾', '佰', '仟', '亿', '拾', '佰', '仟'];
+    const MONEY_NUM_TEXT = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖', '拾'];
+
+    // 获取表单元素
+    const input = document.querySelector('#input');
+    const text = document.querySelector('.text');
+
+    // 监听输入框变化
+    input.addEventListener('input', (evt) => {
+      let { value } = evt.target;
+      if (parseInt(value) > MONEY_MAX_LIMIT) {
+        input.value = String(value).substring(0, String(MONEY_MAX_LIMIT).length);
+        alert('超出限额!');
+        return;
+      }
+      text.innerText = resolve(value);
+    });
+
+    /**
+     * 处理数字金额转对应大写金额
+     * @param value 表单输入金额
+     */
+    function resolve(value) {
+      const split = value.split('.');
+
+      const integer = split[0].split('').reverse(); // 保存整数金额
+      const fraction = split[1] && split[1].split(''); // 保存小数金额
+
+      let integer_res = []; // 保存整数数字部分大写金额
+      integer.forEach((num, idx) => {
+        integer_res.push(numberToText(num) + MONEY_INT_TEXT[idx]);
+      });
+      
+      let fraction_res = []; // 保存小数数字部分大写金额
+      fraction && fraction.forEach((num, idx) => {
+        if (idx >= 3) return; // 小数3位以后不显示对应大写金额
+        fraction_res.push(numberToText(num) + MONEY_FRAC_TEXT[idx]);
+      });
+      
+      // 拼接整数和小数金额大写
+      let result = integer_res.reverse().join('') + fraction_res.join('');
+      // 当有小数金额时将'元整'替换为'元'
+      result = value.split('.')[1]
+        ? result.replace(MONEY_INT_TEXT[0], MONEY_INT_TEXT[0][0])
+        : result;
+
+      return result;
+    }
+      
+    /**
+     * 数字金额转对应大写金额
+     * @param number 数字金额
+     */
+    function numberToText(number) {
+      return MONEY_NUM_TEXT[number];
+    }
+
+  </script>
+</body>
+</html>
