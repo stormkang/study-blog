@@ -74,12 +74,12 @@
       const integer = split[0].split('').reverse(); // 保存整数金额
       const fraction = split[1] && split[1].split(''); // 保存小数金额
 
-      let integer_res = []; // 保存整数数字部分大写金额
+      const integer_res = []; // 保存整数数字部分大写金额
       integer.forEach((num, idx) => {
         integer_res.push(numberToText(num) + MONEY_INT_TEXT[idx]);
       });
       
-      let fraction_res = []; // 保存小数数字部分大写金额
+      const fraction_res = []; // 保存小数数字部分大写金额
       fraction && fraction.forEach((num, idx) => {
         if (idx >= 3) return; // 小数3位以后不显示对应大写金额
         fraction_res.push(numberToText(num) + MONEY_FRAC_TEXT[idx]);
