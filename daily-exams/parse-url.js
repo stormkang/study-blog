@@ -28,7 +28,7 @@ const parseUrl = (url) => {
     port: urlObj.port,
     pathname: urlObj.pathname,
     search: urlObj.search,
-    search: parseSearch(urlObj.search),
+    searchObj: parseSearch(urlObj.search),
     hash: urlObj.hash,
   };
 }
@@ -44,4 +44,5 @@ const parseUrl = (url) => {
   hash: '#top'
 }
 */
-console.log(parseUrl(`https://www.example.com:3000/home?page=4&name=jojn#top`));
+// console.log(parseUrl(`https://www.example.com:3000/home?page=4&name=jojn#top`));
+console.log(parseUrl(`https://cn.bing.com/images/search?q=&view=detailv2&iss=rec&id=07BDA65E3862D653BC0562A277022B1AF4C8B640&ccid=iTes2NJJ&thid=OIP.iTes2NJJ6HyzFAStZlRD5QHaLH&first=1000&selectedIndex=1005&ajaxhist=0&FORM=O2MU01`));
