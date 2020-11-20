@@ -7,13 +7,14 @@ const exphbs = require('express-handlebars');
 const server = express();
 
 server.set('port', process.env.PORT || 3000);
-// 设置路由
-server.use(router);
+// 设置路由, 参数1指定后, 访问路径为: 
+// /tutorial/和/tutorial/about, 不传默认为空.
+server.use('/tutorial', router);
 /*
  * 设置静态资源目录, 官方默认目录结构:
  * - root
  *    - views
-         - layouts
+ *       - layouts
  *          - main.hbs
  *       - xxx.hbs
  *       - xxx.hbs
