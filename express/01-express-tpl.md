@@ -9,28 +9,19 @@ const server = express();
 server.set('port', process.env.PORT || 3000);
 // 设置路由
 server.use(router);
-// 设置 handlebars 视图引擎
+/*
+ * 设置静态资源目录, 官方默认目录结构:
+ * - root
+ *    - views
+         - layouts
+ *          - main.hbs
+ *       - xxx.hbs
+ *       - xxx.hbs
+ */
 server.engine('.hbs', exphbs({extname: '.hbs'}));
 server.set('view engine', '.hbs');
 // 设置静态资源文件目录
 server.use(express.static(__dirname + '/public'));
-
-/**
- * 404 page
- */
-server.use((req, res, next) => {
-  res.status(404);
-  res.render('404');
-});
-
-/**
- * 500 page
- */
-server.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500);
-  res.render('500');
-});
 
 const port = server.get('port');
 server.listen(port, () => {
@@ -48,6 +39,23 @@ router.get('/', (req, res) => {
 
 router.get('/about', (req, res) => {
   res.render('about');
+});
+
+/**
+ * 404 page
+ */
+router.use((req, res, next) => {
+  res.status(404);
+  res.render('404');
+});
+
+/**
+ * 500 page
+ */
+router.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500);
+  res.render('500');
 });
 
 module.exports = router;
