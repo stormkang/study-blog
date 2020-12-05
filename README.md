@@ -15,4 +15,4 @@
 
 
 ## Daily Skills
-记录平时学习过程中遇到的一些小工具或技巧 [➡️](./daily-exams/index.md)
+记录平时学习过程中遇到的一些小工具或技巧 [➡️](./daily-skills/index.md)
