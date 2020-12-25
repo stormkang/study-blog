@@ -46,8 +46,8 @@ const jack = new Worker('jack', 20, 'some work');
 console.log(jack);
 ```
 
+参考上面的关系图理解下面表达式的结果:
 ```js
-// 参考上面的关系图理解下面表达式的结果
 jack.__proto__ === Worker.prototype
 Worker.prototype.constructor === Worker
 Worker.prototype.__proto__ === Person.prototype
