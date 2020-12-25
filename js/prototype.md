@@ -12,7 +12,7 @@
 - 实例对象
 通过new关键字创建的对象
 
-> 构造函数(constructor)通过new关键字创建实例对象(instance), 实例对象通过**__proto__**找到原型对象(prototype), 原型对象通过**constructor**找到构造函数, 如此构成一个循环. 构造函数通过**prototype**也可以找到原型对象.
+> 构造函数(constructor)通过new关键字创建实例对象(instance), 实例对象通过<code>__proto__</code>找到原型对象(prototype), 原型对象通过<code>constructor</code>找到构造函数, 如此构成一个循环. 构造函数通过<code>prototype</code>也可以找到原型对象.
 
 三者之间的关系如下图:
 ![关系图](../images/js_proto.png)
