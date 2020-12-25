@@ -18,4 +18,6 @@
 
 
 ## Daily Skills
-记录平时学习过程中遇到的一些小工具或技巧 [➡️](./daily-skills/index.md)
+- [解析url](./daily-skills/parse-url.js)
+- [数字金额转大写](./daily-skills/money-input.html)
+- [随机生成十六进制的颜色](./daily-skills/gen-random-hex-color.md)
