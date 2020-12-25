@@ -7,6 +7,9 @@
 ## HTML
 - [HTML体系](./html/index.md)
 
+## JavaScript
+- [原型链与继承](./js/prototype.md)
+
 ## Vue.js
 - [基于Vue的按钮高亮切换](./vue/01-btn-focus.vue)
 
